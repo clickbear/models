@@ -1,0 +1,12 @@
+{
+    "name": "stockly/models",
+    "description": "The models of Stockly used for database management and relations",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "Niels Hamelink",
+            "email": "67690385+NielsHamelink-web@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
