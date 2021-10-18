@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Admin;
+namespace Clickbear\Models\Admin;
 
 use App\Models\FeedMapProductModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

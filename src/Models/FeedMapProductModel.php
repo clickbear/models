@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Clickbear\Models;
 
 use App\Models\Admin\FeedTemplateModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
