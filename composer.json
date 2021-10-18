@@ -8,5 +8,10 @@
             "email": "67690385+NielsHamelink-web@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\Models\\": "src/"
+        }
+    }
 }
