@@ -9,9 +9,6 @@
         }
     ],
     "require": {
-        "doctrine/dbal": "^3.1",
-        "php": "^7.3|^8.0",
-        "laravel/framework": "^8.54"
     },
     "autoload": {
         "psr-4": {
