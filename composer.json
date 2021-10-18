@@ -1,5 +1,5 @@
 {
-    "name": "stockly/models",
+    "name": "clickbear/models",
     "description": "The models of Stockly used for database management and relations",
     "type": "composer-plugin",
     "authors": [
