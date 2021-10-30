@@ -1,12 +1,13 @@
 <?php
 
-namespace Clickbear\Models;
+namespace Clickbear\Models\User;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
+use TCG\Voyager\Models\User as VoyagerUser;
 
-class User extends \TCG\Voyager\Models\User
+class User extends VoyagerUser
 {
     use HasFactory, Notifiable;
 
