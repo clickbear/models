@@ -2,6 +2,7 @@
 
 namespace Clickbear\Models\Supplier;
 
+use Clickbear\Models\Catalog\Discount\DiscountCodeModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

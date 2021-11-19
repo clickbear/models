@@ -2,8 +2,10 @@
 
 namespace Clickbear\Models\Catalog\Discount;
 
+use Clickbear\Models\Supplier\SupplierModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class DiscountCodeModel extends Model
 {
@@ -40,7 +42,8 @@ class DiscountCodeModel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function supplier() {
+    public function supplier(): BelongsTo
+    {
         return $this->belongsTo(SupplierModel::class, 'id', 'supplier_id');
     }
 
