@@ -17,7 +17,7 @@ class FeedProductImageModel extends Model
      *
      * @var string
      */
-    protected $table = 'feed_product_image';
+    protected $table = 'feed_product_image_process';
 
     /**
      * The attributes that are mass assignable.
@@ -28,7 +28,6 @@ class FeedProductImageModel extends Model
         'product_id',
         'image_path',
         'type',
-        'deleted',
     ];
 
     /**

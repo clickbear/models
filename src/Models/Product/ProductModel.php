@@ -25,7 +25,8 @@ class ProductModel extends Model
         'name',
         'title',
         'ean_number',
-        'description'
+        'description',
+        'slug'
     ];
 
     public function categories() {

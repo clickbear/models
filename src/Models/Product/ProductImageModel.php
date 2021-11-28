@@ -1,15 +1,14 @@
 <?php
 
 
-namespace Clickbear\Models\Feed;
+namespace Clickbear\Models\Product;
 
-
-use Clickbear\Models\Product\ProductModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeedProductImageModel extends Model
+class ProductImageModel extends Model
 {
+
     use HasFactory;
 
     /**
@@ -17,7 +16,7 @@ class FeedProductImageModel extends Model
      *
      * @var string
      */
-    protected $table = 'feed_product_image';
+    protected $table = 'product_image';
 
     /**
      * The attributes that are mass assignable.
@@ -27,16 +26,10 @@ class FeedProductImageModel extends Model
     protected $fillable = [
         'product_id',
         'image_path',
+        'width',
+        'height',
         'type',
         'deleted',
     ];
 
-    /**
-     * Related product
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function product() {
-        return $this->belongsTo(ProductModel::class, 'id', 'product_id');
-    }
 }
