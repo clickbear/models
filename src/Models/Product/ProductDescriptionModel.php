@@ -29,4 +29,13 @@ class ProductDescriptionModel extends Model
         'title',
         'description',
     ];
+
+    /**
+     * The related product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function product() {
+        return $this->belongsTo(ProductModel::class, 'id', 'product_id');
+    }
 }

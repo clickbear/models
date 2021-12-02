@@ -39,4 +39,8 @@ class ProductModel extends Model
             'id'
         );
     }
+
+    public function description() {
+        return $this->hasOne(ProductDescriptionModel::class, 'product_id', 'id');
+    }
 }
