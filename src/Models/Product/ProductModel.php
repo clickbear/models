@@ -4,6 +4,7 @@ namespace Clickbear\Models\Product;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class ProductModel extends Model
 {
@@ -22,10 +23,7 @@ class ProductModel extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'title',
         'ean_number',
-        'description',
         'slug'
     ];
 
@@ -40,7 +38,8 @@ class ProductModel extends Model
         );
     }
 
-    public function description() {
+    public function description(): HasOne
+    {
         return $this->hasOne(ProductDescriptionModel::class, 'product_id', 'id');
     }
 }
