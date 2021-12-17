@@ -57,4 +57,14 @@ class FeedTemplateModel extends Model
     {
         return $this->hasMany(FeedMapProductModel::class, 'feed_template_id', 'id');
     }
+
+    /**
+     * Attached supplier
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function supplier()
+    {
+        return $this->belongsTo(SupplierModel::class, 'id', 'supplier_id');
+    }
 }
