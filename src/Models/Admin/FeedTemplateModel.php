@@ -66,6 +66,6 @@ class FeedTemplateModel extends Model
      */
     public function supplier()
     {
-        return $this->belongsTo(SupplierModel::class, 'id', 'supplier_id');
+        return $this->belongsTo(SupplierModel::class, 'supplier_id', 'id');
     }
 }
