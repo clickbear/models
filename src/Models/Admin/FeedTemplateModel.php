@@ -3,6 +3,7 @@
 namespace Clickbear\Models\Admin;
 
 use App\Models\FeedMapProductModel;
+use Clickbear\Models\Supplier\SupplierModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
