@@ -50,6 +50,16 @@ class FeedTemplateModel extends Model
     }
 
     /**
+     * Get all files related to the feed template
+     *
+     * @return HasMany
+     */
+    public function feedtemplatefile(): HasMany
+    {
+        return $this->hasMany(FeedTemplateFileModel::class, 'feed_template_id', 'id');
+    }
+
+    /**
      * Get all product feed maps
      *
      * @return HasMany
