@@ -35,4 +35,13 @@ class FeedTemplateFileModel extends Model
         'file_path',
         'active',
     ];
+
+    /**
+     * The related feed template
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function feedtemplate() {
+        return $this->belongsTo(FeedTemplateModel::class, 'feed_template_id', 'id');
+    }
 }
