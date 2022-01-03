@@ -1,11 +1,13 @@
 <?php
 
+
 namespace Clickbear\Models\Catalog\Blog;
+
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogPostModel extends Model
+class BlogCategoryModel extends Model
 {
     use HasFactory;
 
@@ -14,14 +16,14 @@ class BlogPostModel extends Model
      *
      * @var string
      */
-    protected $table = 'blog_posts';
+    protected $table = 'blog_categories';
 
     /**
-     * Has one category
+     * Has many posts
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function category() {
-        return $this->hasOne(BlogCategoryModel::class, 'id', 'category_id');
+    public function posts() {
+        return $this->hasMany(BlogPostModel::class, 'id', 'category_id');
     }
 }
