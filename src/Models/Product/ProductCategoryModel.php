@@ -25,6 +25,7 @@ class ProductCategoryModel extends Model
         'name',
         'priority',
         'slug',
+        'image',
     ];
 
     /**
