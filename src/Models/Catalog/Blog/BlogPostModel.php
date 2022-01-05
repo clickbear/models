@@ -4,6 +4,7 @@ namespace Clickbear\Models\Catalog\Blog;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class BlogPostModel extends Model
 {
@@ -19,10 +20,10 @@ class BlogPostModel extends Model
     /**
      * Has one category
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return BelongsTo
      */
-    public function category()
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(BlogCategoryModel::class, 'id', 'category_id');
+        return $this->belongsTo(BlogCategoryModel::class, 'category_id', 'id');
     }
 }
