@@ -21,7 +21,8 @@ class BlogPostModel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function category() {
-        return $this->hasOne(BlogCategoryModel::class, 'id', 'category_id');
+    public function category()
+    {
+        return $this->belongsTo(BlogCategoryModel::class, 'id', 'category_id');
     }
 }
