@@ -37,7 +37,7 @@ class ProductPriceModel extends Model
      */
     public function supplier(): BelongsTo
     {
-        return $this->belongsTo(SupplierModel::class, 'id', 'supplier_id');
+        return $this->belongsTo(SupplierModel::class, 'supplier_id', 'id');
     }
 
 }
