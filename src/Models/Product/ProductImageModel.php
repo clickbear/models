@@ -30,6 +30,7 @@ class ProductImageModel extends Model
         'height',
         'type',
         'deleted',
+        'source',
     ];
 
 }
