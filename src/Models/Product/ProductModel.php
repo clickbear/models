@@ -77,12 +77,21 @@ class ProductModel extends Model
     }
 
     /**
-     * Get the prices of the product
+     * Get the prices of the related product
      *
      * @return HasMany
      */
     public function prices()
     {
         return $this->hasMany(ProductPriceModel::class, 'product_id', 'id')->orderBy('price', 'desc');
+    }
+
+    /**
+     * Get the images of the related product
+     *
+     * @return HasMany
+     */
+    public function images() {
+        return $this->hasMany(ProductImageModel::class, 'product_id', 'id');
     }
 }
