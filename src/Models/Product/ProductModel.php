@@ -83,7 +83,10 @@ class ProductModel extends Model
      */
     public function prices()
     {
-        return $this->hasMany(ProductPriceModel::class, 'product_id', 'id')->orderBy('price', 'desc');
+        return $this->hasMany(ProductPriceModel::class, 'product_id', 'id')
+            ->select('*')
+            ->distinct('supplier_id')
+            ->orderBy('price', 'desc');
     }
 
     /**
