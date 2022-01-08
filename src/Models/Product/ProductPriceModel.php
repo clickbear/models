@@ -2,8 +2,10 @@
 
 namespace Clickbear\Models\Product;
 
+use Clickbear\Models\Supplier\SupplierModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProductPriceModel extends Model
 {
@@ -27,5 +29,15 @@ class ProductPriceModel extends Model
         'price',
         'url',
     ];
+
+    /**
+     * The relation to the supplier
+     *
+     * @return BelongsTo
+     */
+    public function supplier(): BelongsTo
+    {
+        return $this->belongsTo(SupplierModel::class, 'id', 'supplier_id');
+    }
 
 }
