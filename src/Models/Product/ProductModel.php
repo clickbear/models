@@ -42,4 +42,9 @@ class ProductModel extends Model
     {
         return $this->hasOne(ProductDescriptionModel::class, 'product_id', 'id');
     }
+
+    public function defaultImage(): HasOne
+    {
+        return $this->hasOne(ProductImageModel::class, 'product_id', 'id')->where('type', 'default');
+    }
 }
