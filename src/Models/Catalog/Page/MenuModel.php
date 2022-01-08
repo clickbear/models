@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Clickbear\Models\Catalog\Page;
-
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -33,7 +31,8 @@ class MenuModel extends Model
      *
      * @return HasMany
      */
-    public function menuitem() {
+    public function menuitem(): HasMany
+    {
         return $this->hasMany(MenuItemModel::class, 'id', 'menu_id');
     }
 }
