@@ -85,7 +85,7 @@ class ProductModel extends Model
     {
         return $this->hasMany(ProductPriceModel::class, 'product_id', 'id')
             ->select('*')
-            ->distinct('supplier_id')
+            ->groupBy('supplier_id')
             ->orderBy('price', 'desc');
     }
 
