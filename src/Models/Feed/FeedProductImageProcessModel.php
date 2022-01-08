@@ -7,7 +7,7 @@ use Clickbear\Models\Product\ProductModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeedProductImageModel extends Model
+class FeedProductImageProcessModel extends Model
 {
     use HasFactory;
 
