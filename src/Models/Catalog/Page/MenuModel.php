@@ -33,6 +33,6 @@ class MenuModel extends Model
      */
     public function menuitem(): HasMany
     {
-        return $this->hasMany(MenuItemModel::class, 'id', 'menu_id');
+        return $this->hasMany(MenuItemModel::class, 'menu_id', 'id');
     }
 }

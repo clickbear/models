@@ -48,6 +48,6 @@ class MenuItemModel extends Model
      */
     public function menu(): HasOne
     {
-        return $this->hasOne(MenuModel::class, 'menu_id', 'id');
+        return $this->hasOne(MenuModel::class, 'id', 'menu_id');
     }
 }
