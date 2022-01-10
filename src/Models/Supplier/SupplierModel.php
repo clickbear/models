@@ -2,9 +2,11 @@
 
 namespace Clickbear\Models\Supplier;
 
+use Clickbear\Models\Admin\FeedTemplateModel;
 use Clickbear\Models\Catalog\Discount\DiscountCodeModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SupplierModel extends Model
 {
@@ -32,9 +34,20 @@ class SupplierModel extends Model
     /**
      * Get all discount codes of the supplier
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function discountCodes() {
+    public function discountCodes(): HasMany
+    {
         return $this->hasMany(DiscountCodeModel::class, 'supplier_id', 'id');
+    }
+
+    /**
+     * Get the feed templates
+     *
+     * @return HasMany
+     */
+    public function feedTemplates(): HasMany
+    {
+        return $this->hasMany(FeedTemplateModel::class, 'supplier_id', 'id');
     }
 }

@@ -54,7 +54,7 @@ class FeedTemplateModel extends Model
      *
      * @return HasMany
      */
-    public function feedtemplatefile(): HasMany
+    public function feedTemplateFiles(): HasMany
     {
         return $this->hasMany(FeedTemplateFileModel::class, 'feed_template_id', 'id');
     }
