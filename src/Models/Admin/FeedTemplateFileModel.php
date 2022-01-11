@@ -34,6 +34,7 @@ class FeedTemplateFileModel extends Model
         'feed_template_id',
         'file_path',
         'active',
+        'status',
     ];
 
     /**
