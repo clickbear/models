@@ -27,7 +27,7 @@ class ProductPriceModel extends Model
         'product_id',
         'supplier_id',
         'price',
-        'url',
+        'link',
     ];
 
     /**
