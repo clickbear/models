@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Clickbear\Models\Feed;
+namespace Clickbear\Models\User;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeedProductCategoryModel extends Model
+class UserRoleModel extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,7 @@ class FeedProductCategoryModel extends Model
      *
      * @var string
      */
-    protected $table = 'feed_product_category';
+    protected $table = 'user_roles';
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +24,8 @@ class FeedProductCategoryModel extends Model
      * @var array
      */
     protected $fillable = [
-        'product_id',
-        'category_name',
+        'name',
+        'display_name',
     ];
+
 }
