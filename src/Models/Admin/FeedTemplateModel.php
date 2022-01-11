@@ -36,7 +36,8 @@ class FeedTemplateModel extends Model
     protected $fillable = [
         'name',
         'type',
-        'supplier_id'
+        'supplier_id',
+        'status'
     ];
 
     /**
