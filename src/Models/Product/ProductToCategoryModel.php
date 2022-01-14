@@ -19,5 +19,14 @@ class ProductToCategoryModel extends Model
     public $timestamps = false;
     public $incrementing = false;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'product_id',
+        'category_id',
+    ];
 
 }
