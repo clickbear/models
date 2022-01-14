@@ -26,5 +26,7 @@ class FeedProductCategoryModel extends Model
     protected $fillable = [
         'product_id',
         'category_name',
+        'template_id',
+        'deleted',
     ];
 }
