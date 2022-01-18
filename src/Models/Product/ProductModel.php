@@ -39,10 +39,10 @@ class ProductModel extends Model
         return $this->hasManyThrough(
             ProductCategoryModel::class,
             ProductToCategoryModel::class,
+            'id',
+            'id',
             'category_id',
             'product_id',
-            'id',
-            'id'
         );
     }
 
