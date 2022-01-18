@@ -41,8 +41,8 @@ class ProductModel extends Model
             ProductToCategoryModel::class,
             'id',
             'id',
-            'product_id',
             'category_id',
+            'product_id',
         );
     }
 

@@ -29,13 +29,7 @@ class ProductToCategoryModel extends Model
      *
      * @var bool
      */
-    public $incrementing = false;
-
-    /**
-     * Primary key(s)
-     * @var string[]
-     */
-    protected $primaryKey = ['product_id', 'category_id'];
+    public $incrementing = true;
 
     /**
      * The attributes that are mass assignable.
@@ -48,38 +42,10 @@ class ProductToCategoryModel extends Model
     ];
 
     /**
-     * Set the keys for a save update query.
-     *
-     * @param $query
-     * @return Builder
+     * Related product category
      */
-    protected function setKeysForSaveQuery($query): Builder
-    {
-        $keys = $this->getKeyName();
-        if(!is_array($keys)){
-            return parent::setKeysForSaveQuery($query);
-        }
-
-        foreach($keys as $keyName){
-            $query->where($keyName, '=', $this->getKeyForSaveQuery($keyName));
-        }
-
-        return $query;
-    }
-
-    /**
-     * Get the primary key value for a save query.
-     *
-     * @param mixed $keyName
-     * @return mixed
-     */
-    protected function getKeyForSaveQuery($keyName = null)
-    {
-        if(is_null($keyName)){
-            $keyName = $this->getKeyName();
-        }
-
-        return $this->original[$keyName] ?? $this->getAttribute($keyName);
+    public function category() {
+        return $this->hasOne(ProductToCategoryModel::class, 'id', 'category_id');
     }
 
 }
