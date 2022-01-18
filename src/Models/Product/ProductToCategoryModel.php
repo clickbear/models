@@ -18,6 +18,7 @@ class ProductToCategoryModel extends Model
 
     public $timestamps = false;
     public $incrementing = false;
+    protected $primaryKey = ['product_id', 'category_id'];
 
     /**
      * The attributes that are mass assignable.
