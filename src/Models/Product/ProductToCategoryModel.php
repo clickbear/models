@@ -4,6 +4,7 @@ namespace Clickbear\Models\Product;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProductToCategoryModel extends Model
 {
@@ -52,7 +53,7 @@ class ProductToCategoryModel extends Model
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    protected function setKeysForSaveQuery(Builder $query)
+    protected function setKeysForSaveQuery(Builder $query): Builder
     {
         $keys = $this->getKeyName();
         if(!is_array($keys)){
@@ -78,11 +79,7 @@ class ProductToCategoryModel extends Model
             $keyName = $this->getKeyName();
         }
 
-        if (isset($this->original[$keyName])) {
-            return $this->original[$keyName];
-        }
-
-        return $this->getAttribute($keyName);
+        return $this->original[$keyName] ?? $this->getAttribute($keyName);
     }
 
 }
