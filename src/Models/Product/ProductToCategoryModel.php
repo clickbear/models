@@ -16,8 +16,24 @@ class ProductToCategoryModel extends Model
      */
     public $table = 'product_to_category';
 
+    /**
+     * Enable or disable timestamps, be sure they exist...
+     *
+     * @var bool
+     */
     public $timestamps = false;
+
+    /**
+     * Enable or disable auto increment
+     *
+     * @var bool
+     */
     public $incrementing = false;
+
+    /**
+     * Primary key(s)
+     * @var string[]
+     */
     protected $primaryKey = ['product_id', 'category_id'];
 
     /**
@@ -29,5 +45,44 @@ class ProductToCategoryModel extends Model
         'product_id',
         'category_id',
     ];
+
+    /**
+     * Set the keys for a save update query.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    protected function setKeysForSaveQuery(Builder $query)
+    {
+        $keys = $this->getKeyName();
+        if(!is_array($keys)){
+            return parent::setKeysForSaveQuery($query);
+        }
+
+        foreach($keys as $keyName){
+            $query->where($keyName, '=', $this->getKeyForSaveQuery($keyName));
+        }
+
+        return $query;
+    }
+
+    /**
+     * Get the primary key value for a save query.
+     *
+     * @param mixed $keyName
+     * @return mixed
+     */
+    protected function getKeyForSaveQuery($keyName = null)
+    {
+        if(is_null($keyName)){
+            $keyName = $this->getKeyName();
+        }
+
+        if (isset($this->original[$keyName])) {
+            return $this->original[$keyName];
+        }
+
+        return $this->getAttribute($keyName);
+    }
 
 }
