@@ -1,13 +1,10 @@
 <?php
-
-
 namespace Clickbear\Models\Product;
-
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductToSpecification extends Model
+class ProductToSpecificationModel extends Model
 {
     use HasFactory;
 
