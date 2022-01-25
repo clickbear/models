@@ -30,7 +30,6 @@ class ProductToSpecificationModel extends Model
     protected $fillable = [
         'product_id',
         'specification_id',
-        'spec_key',
         'spec_value',
     ];
 }

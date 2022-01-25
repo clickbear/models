@@ -16,5 +16,14 @@ class SpecificationModel extends Model
      */
     public $table = 'specifications';
 
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'spec_key',
+        'spec_name',
+        'priority',
+    ];
 }
