@@ -96,4 +96,13 @@ class ProductModel extends Model
     public function images() {
         return $this->hasMany(ProductImageModel::class, 'product_id', 'id');
     }
+
+    /**
+     * Get the bullet points of the related product
+     *
+     * @return HasMany
+     */
+    public function bullets() {
+        return $this->hasMany(ProductBulletModel::class, 'product_id', 'id');
+    }
 }
