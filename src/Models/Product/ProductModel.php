@@ -26,7 +26,8 @@ class ProductModel extends Model
      */
     protected $fillable = [
         'ean_number',
-        'slug'
+        'slug',
+        'status'
     ];
 
     /**
