@@ -28,6 +28,8 @@ class ProductDescriptionModel extends Model
         'name',
         'title',
         'description',
+        'origin',
+        'current'
     ];
 
     /**
