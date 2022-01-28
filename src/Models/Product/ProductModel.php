@@ -54,8 +54,19 @@ class ProductModel extends Model
      */
     public function description(): HasOne
     {
-        return $this->hasOne(ProductDescriptionModel::class, 'product_id', 'id')
-            ->where('current', 1);
+        return $this->hasOne(ProductDescriptionModel::class, 'product_id', 'id');
+    }
+
+    /**
+     * The current description of a product
+     *
+     * @return Model|HasMany|object|null
+     */
+    public function currentDescription()
+    {
+        return $this->hasMany(ProductDescriptionModel::class, 'product_id', 'id')
+            ->where('current', 1)
+            ->first();
     }
 
     /**
