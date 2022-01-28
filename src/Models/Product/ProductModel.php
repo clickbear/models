@@ -54,7 +54,8 @@ class ProductModel extends Model
      */
     public function description(): HasOne
     {
-        return $this->hasOne(ProductDescriptionModel::class, 'product_id', 'id');
+        return $this->hasOne(ProductDescriptionModel::class, 'product_id', 'id')
+            ->where('current', 1);
     }
 
     /**
