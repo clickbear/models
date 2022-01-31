@@ -19,6 +19,13 @@ class ProductToVendorModel extends Model
     protected $table = 'product_to_vendor';
 
     /**
+     * Enable or disable timestamps, be sure they exist...
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
