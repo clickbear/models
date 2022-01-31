@@ -27,6 +27,7 @@ class FeedProductCategoryModel extends Model
         'product_id',
         'category_name',
         'feed_template_id',
+        'icecat_id',
         'deleted',
     ];
 }
