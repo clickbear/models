@@ -26,6 +26,7 @@ class FeedMapProductCategoryModel extends Model
     protected $fillable = [
         'category_id',
         'feed_template_id',
+        'icecat_id',
         'category_name',
     ];
 }
